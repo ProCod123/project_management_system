@@ -2,8 +2,30 @@
 <html>
 <body>
 
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
+<h1>Пользователи</h1>
+  
+<ul>
+  {% for x in users %}
+    <li>{{ x.name }} {{ x.surname }}</li>
+  {% endfor %}
+</ul>
+
+
+<h1>Задачи</h1>
+
+<ul>
+  {% for x in tasks %}
+        <li><a href="https://www.yandex.ru/">{{ x.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<h1>Фото</h1>
+    <ul>
+        {% for photo in photos %}
+            <img src="{{ photo.image.url }}" alt="{{ photo.description }}" height="200">
+            <p>Created at: {{ photo.created_at }}</p>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>
